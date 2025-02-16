@@ -80,17 +80,6 @@ function Navbar() {
           transition={{ duration: 0.3 }}
           className="lg:hidden mt-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/10"
         >
-          {/* Profile Image in Mobile Menu */}
-          <div className="flex justify-center py-4">
-            <div className="w-16 h-16 rounded-full overflow-hidden">
-              <img
-                alt="User profile"
-                src="/Isaiah.jpg"
-                onError={(e) => (e.target.src = "/default-avatar.png")}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
 
           <ul className="flex flex-col space-y-2 p-4">
             {["Home", "About Me", "Skills", "Portfolio"].map((item) => (
