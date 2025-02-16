@@ -17,15 +17,24 @@ function Navbar() {
       className="fixed top-0 left-0 w-full z-50 p-4 bg-white/10 backdrop-blur-md border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href="#"
-          className="text-2xl font-bold text-white"
-        >
-          Dev Isaiah
-        </motion.a>
+        {/* Profile Dropdown */}
+        <div className="hidden lg:block">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="relative"
+          >
+            <div className="w-10 h-10 rounded-full overflow-hidden cursor-pointer">
+              <img
+                alt="User profile"
+                src="/Isaiah.jpg"
+                onError={(e) => (e.target.src = "/default-avatar.png")}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+          </motion.div>
+        </div>
 
         {/* Hamburger Menu (Mobile) */}
         <button
@@ -67,24 +76,6 @@ function Navbar() {
           ))}
         </motion.div>
 
-        {/* Profile Dropdown */}
-        <div className="hidden lg:block">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="relative"
-          >
-            <div className="w-10 h-10 rounded-full overflow-hidden cursor-pointer">
-              <img
-                alt="User profile"
-                src="/Isaiah.jpg"
-                onError={(e) => (e.target.src = "/default-avatar.png")}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-          </motion.div>
-        </div>
       </div>
 
       {/* Mobile Menu */}
