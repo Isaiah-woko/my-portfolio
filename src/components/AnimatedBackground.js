@@ -6,7 +6,7 @@ const AnimatedBackground = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
-      className="absolute inset-0 -z-10 overflow-hidden"
+      className="fixed inset-0 -z-10 overflow-hidden"
     >
       {/* Main gradient blobs */}
       <motion.div

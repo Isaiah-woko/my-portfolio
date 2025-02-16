@@ -1,22 +1,26 @@
-import './App.css';
-import React from 'react';
-import { Homepage, Navbar, About, Portfolio, Skills, Contact, AnimatedBackground } from './components';
+import React from "react";
+import { Homepage, Navbar, About, Portfolio, Skills, Contact, AnimatedBackground } from "./components";
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      {/* Wrapper with background only for Navbar & Homepage */}
-      <div className="min-h-screen bg-cover bg-center">
-        <AnimatedBackground />
+    <div className="relative">
+      {/* Full-screen animated background */}
+      <AnimatedBackground />
+
+      {/* Navbar and Homepage */}
+      <div className="relative z-10">
         <Navbar />
         <Homepage />
       </div>
 
-      {/* Sections with default or custom background */}
-      <About />
-      <Skills />
-      <Portfolio />
-      <Contact />
+      {/* Other sections */}
+      <div className="relative z-10">
+        <About />
+        <Skills />
+        <Portfolio />
+        <Contact />
+      </div>
     </div>
   );
 }
