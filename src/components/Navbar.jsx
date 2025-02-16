@@ -17,24 +17,19 @@ function Navbar() {
       className="fixed top-0 left-0 w-full z-50 p-4 bg-white/10 backdrop-blur-md border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Profile Dropdown */}
-        <div className="hidden lg:block">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="relative"
-          >
-            <div className="w-10 h-10 rounded-full overflow-hidden cursor-pointer">
-              <img
-                alt="User profile"
-                src="/Isaiah.jpg"
-                onError={(e) => (e.target.src = "/default-avatar.png")}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-          </motion.div>
-        </div>
+        {/* Profile Image as Logo */}
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-10 h-10 rounded-full overflow-hidden cursor-pointer"
+        >
+          <img
+            alt="User profile"
+            src="/Isaiah.jpg"
+            onError={(e) => (e.target.src = "/default-avatar.png")}
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
 
         {/* Hamburger Menu (Mobile) */}
         <button
@@ -59,9 +54,9 @@ function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="hidden lg:flex space-x-8"
+          className="hidden lg:flex space-x-8 flex-1 justify-center"
         >
-          {["Home", "About Me", "Skills", "Portfolio"].map((item, index) => (
+          {["Home", "About Me", "Skills", "Portfolio"].map((item) => (
             <motion.a
               key={item}
               whileHover={{ scale: 1.1 }}
@@ -75,7 +70,6 @@ function Navbar() {
             </motion.a>
           ))}
         </motion.div>
-
       </div>
 
       {/* Mobile Menu */}
@@ -86,6 +80,18 @@ function Navbar() {
           transition={{ duration: 0.3 }}
           className="lg:hidden mt-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/10"
         >
+          {/* Profile Image in Mobile Menu */}
+          <div className="flex justify-center py-4">
+            <div className="w-16 h-16 rounded-full overflow-hidden">
+              <img
+                alt="User profile"
+                src="/Isaiah.jpg"
+                onError={(e) => (e.target.src = "/default-avatar.png")}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
           <ul className="flex flex-col space-y-2 p-4">
             {["Home", "About Me", "Skills", "Portfolio"].map((item) => (
               <motion.li
