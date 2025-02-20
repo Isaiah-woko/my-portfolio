@@ -5,3 +5,4 @@ export { default as Portfolio } from './Portfolio';
 export { default as Skills } from './Skills';
 export { default as Contact } from './Contact';
 export { default as AnimatedBackground } from './AnimatedBackground';
+export { default as ThemeSwitcher } from './ThemeSwitcher';

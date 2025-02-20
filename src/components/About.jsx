@@ -1,5 +1,5 @@
 import React from "react";
-import ParticleEffect from "./ParticleEffect";
+// import ParticleEffect from "./ParticleEffect";
 import  AnimatedBackground from "./AnimatedBackground";
 
 function About() {

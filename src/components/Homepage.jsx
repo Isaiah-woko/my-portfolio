@@ -7,6 +7,7 @@ function HomePage() {
     <div className="min-h-screen relative overflow-hidden">
       {/* Animated Background */}
       <AnimatedBackground />
+      
 
       {/* Split Layout */}
       <section
