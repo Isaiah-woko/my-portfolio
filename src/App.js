@@ -1,5 +1,5 @@
 import React from "react";
-import { Homepage, Navbar, About, Portfolio, Skills, Contact, AnimatedBackground, ThemeSwitcher } from "./components";
+import { Homepage, Navbar, About, Portfolio, Skills, Contact, AnimatedBackground, Footer, Reviews } from "./components";
 import "./App.css";
 
 function App() {
@@ -15,14 +15,12 @@ function App() {
         <Navbar />
         {/* <ThemeSwitcher /> */}
         <Homepage />
-      </div>
-
-      {/* Other sections */}
-      <div className="relative z-10">
         <About />
         <Skills />
         <Portfolio />
+        <Reviews />
         <Contact />
+        <Footer />
       </div>
     </div>
   );

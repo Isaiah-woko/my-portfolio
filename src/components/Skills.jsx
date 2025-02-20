@@ -29,31 +29,29 @@ function Skills() {
     { name: "Linux", logo: "/logos/linux.svg" },
   ];
 
-  // Animation variants for the skill cards
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
-    hover: { scale: 1.05, rotate: [0, -5, 5, -5, 0], transition: { duration: 0.5 } },
+    hover: { scale: 1.05, transition: { duration: 0.3 } },
   };
 
-  // Animation for the section heading
   const headingVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   const renderSkills = (skills, title) => (
-    <div className="mb-12">
+    <div className="mb-8">
       <motion.h3
         variants={headingVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="text-2xl font-bold text-white mb-6"
+        className="text-xl font-bold text-white mb-4"
       >
         {title}
       </motion.h3>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
         {skills.map((skill, index) => (
           <motion.div
             key={skill.name}
@@ -62,8 +60,7 @@ function Skills() {
             whileInView="visible"
             whileHover="hover"
             viewport={{ once: true }}
-            custom={index}
-            className="group p-3 bg-white/5 backdrop-blur-md rounded-full shadow-lg hover:bg-white/10 transition-all duration-300 ease-in-out flex flex-col items-center justify-center space-y-1"
+            className="group p-2 bg-white/10 backdrop-blur-md rounded-lg shadow-md border border-transparent transition-all duration-300 ease-in-out flex flex-col items-center justify-center space-y-1 hover:border-gray-400"
           >
             <img
               src={skill.logo}
@@ -78,13 +75,13 @@ function Skills() {
   );
 
   return (
-    <section id="skills" className="min-h-screen flex flex-col justify-center items-center text-center px-6 py-12">
+    <section id="skills" className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-8">
       <motion.h2
         variants={headingVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="text-4xl font-bold text-white mb-12"
+        className="text-3xl font-bold text-white mb-8"
       >
         Skills & Technologies
       </motion.h2>

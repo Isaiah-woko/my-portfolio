@@ -4,5 +4,7 @@ export { default as About } from './About';
 export { default as Portfolio } from './Portfolio';
 export { default as Skills } from './Skills';
 export { default as Contact } from './Contact';
+export { default as Reviews } from './Reviews';
 export { default as AnimatedBackground } from './AnimatedBackground';
 export { default as ThemeSwitcher } from './ThemeSwitcher';
+export { default as Footer } from './Footer';
