@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -10,7 +11,8 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent! I'll get back to you soon. 🚀");
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000); // Hide message after 3s
   };
 
   return (
@@ -28,13 +30,39 @@ function Contact() {
         <h2 className="text-4xl font-bold text-white mb-6">Get in Touch ✉️</h2>
 
         <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-          Have a project in mind? Let’s build something **amazing** together!  
-          Feel free to **reach out** through my socials or drop a message below.
+          Have a project in mind? Let’s build something <b>amazing</b> together!  
+          Feel free to <b>reach out</b> through my socials or drop a message below.
         </p>
 
+        {/* Success Message */}
+        {submitted && (
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="text-green-400 font-semibold bg-green-900/20 py-2 px-4 rounded-md mb-4"
+          >
+            ✅ Message sent! I’ll get back to you soon.
+          </motion.p>
+        )}
+
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="flex flex-col">
+        <motion.form
+          onSubmit={handleSubmit}
+          className="space-y-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+        >
+          <motion.div className="flex flex-col" variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
             <label className="text-gray-300 text-left mb-1">Your Name</label>
             <input
               type="text"
@@ -45,9 +73,9 @@ function Contact() {
               className="p-3 bg-white/10 border border-gray-600 rounded-lg text-white outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col">
+          <motion.div className="flex flex-col" variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
             <label className="text-gray-300 text-left mb-1">Your Email</label>
             <input
               type="email"
@@ -58,9 +86,9 @@ function Contact() {
               className="p-3 bg-white/10 border border-gray-600 rounded-lg text-white outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col">
+          <motion.div className="flex flex-col" variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
             <label className="text-gray-300 text-left mb-1">Message</label>
             <textarea
               name="message"
@@ -71,16 +99,17 @@ function Contact() {
               className="p-3 bg-white/10 border border-gray-600 rounded-lg text-white outline-none focus:ring-2 focus:ring-blue-500 resize-none"
               required
             />
-          </div>
+          </motion.div>
 
           <motion.button
             type="submit"
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-md cursor-pointer"
           >
             Send Message 🚀
           </motion.button>
-        </form>
+        </motion.form>
       </motion.div>
     </section>
   );
