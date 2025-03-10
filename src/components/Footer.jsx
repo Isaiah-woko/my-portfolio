@@ -41,7 +41,7 @@ function Footer() {
         <motion.div className="flex space-x-6">
           {[
             { icon: <FaLinkedin />, href: "#", color: "text-blue-400 hover:text-blue-500" },
-            { icon: <FaGithub />, href: "#", color: "text-gray-300 hover:text-white" },
+            { icon: <FaGithub />, href: "https://github.com/Isaiah-woko", color: "text-gray-300 hover:text-white" },
             { icon: <FaEnvelope />, href: "mailto:wokoisaiah68@gmail.com", color: "text-pink-400 hover:text-pink-500" },
           ].map((social, index) => (
             <motion.a
