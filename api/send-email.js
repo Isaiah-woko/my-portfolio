@@ -1,14 +1,18 @@
+// api/send-email.js
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
+    return res.status(405).json({ message: "Only POST requests allowed" });
   }
+
+  console.log("📥 Incoming POST request to /api/send-email");
 
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
-    return res.status(400).json({ message: "Missing required fields" });
+    console.error("❌ Missing fields");
+    return res.status(400).json({ error: "Missing required fields" });
   }
 
   try {
@@ -21,21 +25,17 @@ export default async function handler(req, res) {
     });
 
     const mailOptions = {
-      from: `"${name}" <${process.env.EMAIL_USER}>`,  // use your email here to avoid Gmail spoofing
+      from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
       subject: `New message from ${name}`,
-      text: `
-New message from ${name} <${email}>:
-
-${message}
-      `,
+      text: `Message from ${email}:\n\n${message}`,
     };
 
     await transporter.sendMail(mailOptions);
-
-    return res.status(200).json({ success: true, message: "Email sent successfully!" });
-  } catch (error) {
-    console.error("Error sending email:", error);
-    return res.status(500).json({ success: false, error: "Failed to send email." });
+    console.log("✅ Email sent successfully");
+    return res.status(200).json({ success: true });
+  } catch (err) {
+    console.error("🚨 Error sending email:", err);
+    return res.status(500).json({ error: "Failed to send email" });
   }
 }
