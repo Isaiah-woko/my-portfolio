@@ -15,7 +15,7 @@ function Contact() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://your-backend-url.onrender.com/send-email", {
+      const response = await fetch("https://my-portfolio-y7mr.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
