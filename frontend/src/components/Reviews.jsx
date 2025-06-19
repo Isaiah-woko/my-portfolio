@@ -4,25 +4,22 @@ import { FaStar } from "react-icons/fa";
 
 const reviews = [
   {
-    name: "John Doe",
-    role: "CEO, TechCorp",
-    image: "/Isaiah.jpg",
+    name: "Anderson",
+    role: "Web Design",
     rating: 5,
-    text: "Working with Isaiah was an absolute pleasure. His attention to detail and design skills are top-notch!",
+    text: "Working with Isaiah on my app’s UI was an absolute pleasure. He really understood my vision and brought it to life with clean, intuitive designs. His attention to detail and user-centric approach made the whole process smooth and enjoyable. I’d definitely work with him again!",
   },
   {
-    name: "Jane Smith",
-    role: "Founder, StartupX",
-    image: "/reviews/jane.jpg",
+    name: "Emmanuel",
+    role: "Full Website Development",
     rating: 4,
-    text: "Isaiah brought our vision to life with a stunning UI. Highly recommended!",
+    text: "Isaiah built my entire website from the ground up, and I couldn’t be happier with the result. He was patient, professional, and brought great ideas to the table. The final product looks amazing and works flawlessly. Highly recommend!",
   },
   {
-    name: "Michael Johnson",
-    role: "CTO, DevHub",
-    image: "/reviews/michael.jpg",
+    name: "Ahed Eisa",
+    role: "Website Collaboration",
     rating: 5,
-    text: "A talented developer with a deep understanding of UI/UX and backend logic. Great work!",
+    text: "Isaiah and I worked together on a full-stack website, and his skills truly stood out. He was easy to collaborate with, always met deadlines, and contributed significantly to both the frontend and functionality. He’s a great teammate and developer.",
   },
 ];
 
@@ -35,13 +32,6 @@ const ReviewCard = ({ review, index }) => (
     whileHover={{ scale: 1.05 }}
     className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg p-6 text-center max-w-sm"
   >
-    <img 
-      src={review.image} 
-      alt={review.name} 
-      className="w-16 h-16 mx-auto rounded-full mb-4" 
-      loading="lazy"
-      onError={(e) => { e.target.src = "/placeholder.jpg"; }}
-    />
     <h3 className="text-lg font-semibold text-white">{review.name}</h3>
     <p className="text-sm text-gray-300">{review.role}</p>
     <div className="flex justify-center mt-2">
