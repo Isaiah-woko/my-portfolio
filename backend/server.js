@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS setup to allow only your frontend domain
 const corsOptions = {
-  origin: "https://isaiahwoko.vercel.app/", // replace with your actual frontend URL
+  origin: "https://isaiahwoko.vercel.app", // replace with your actual frontend URL
   optionsSuccessStatus: 200,
 };
 
