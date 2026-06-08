@@ -20,7 +20,7 @@ function Footer() {
           className="text-white text-2xl font-bold tracking-wide"
           variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
         >
-          Isaiah's Portfolio 🚀
+          Isaiah's Portfolio
         </motion.div>
 
         {/* Quick Links */}
