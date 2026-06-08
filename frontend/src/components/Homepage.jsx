@@ -14,7 +14,7 @@ function HomePage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-     
+
 
       {/* Split Layout */}
       <section
@@ -29,7 +29,7 @@ function HomePage() {
           className="w-full lg:w-1/2 flex justify-center lg:justify-end mb-8 lg:mb-0"
         >
           <motion.img
-            src="/Isaiah.png"
+            src="/isaiah.png"
             alt="Developer Illustration"
             className="w-64 sm:w-90 md:w-100 lg:w-[20rem] h-64 sm:h-90 md:h-100 lg:h-[20rem] rounded-lg shadow-2xl object-cover"
             style={{
